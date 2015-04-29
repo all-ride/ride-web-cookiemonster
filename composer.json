@@ -1,0 +1,23 @@
+{
+    "name": "ride/web-cookiemonster",
+    "description": "Automatic notification of cookie usage in a Ride application",
+    "license": "MIT",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "Joris Vandeweerd",
+            "email": "joris@statik.be"
+        }
+    ],
+    "require": {
+        "ride/lib-event": ">=0.3.0",
+        "ride/lib-mvc": ">=0.2.0",
+        "ride/web": ">=0.2.4",
+        "ride/web-i18n-expose": ">=0.1.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "ride\\web\\CookieMonsterApplicationListener": ["src/"]
+        }
+    }
+}
