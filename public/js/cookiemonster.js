@@ -23,7 +23,7 @@
         cookieWrapper.innerHTML = '<div class="container">' +
           '<h2 class="cookiemonster__heading">' + rideApp.translator.translate('title.cookiemonster') + '</h2>' +
           '<p>' + rideApp.translator.translate('label.cookiemonster') + '</p>' +
-          '<a href="#" class="link--ext cookiemonster__accept js-cookie-accept">' + rideApp.translator.translate('button.cookiemonster') + '</a>' +
+          '<a href="#" class="cookiemonster__accept js-cookie-accept">' + rideApp.translator.translate('button.cookiemonster') + '</a>' +
           '<a href="#" class="cookiemonster__close js-cookie-close">&times;</a>' +
         '</div>';
 
