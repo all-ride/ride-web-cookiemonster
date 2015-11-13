@@ -65,7 +65,7 @@ class CookieMonsterApplicationListener {
      * @param \ride\library\mvc\view\View $view
      * @return boolean
      */
-    private function shouldAddCookieMonster(Request $request, Response $response, View $view) {
+    private function shouldAddCookieMonster(Request $request, Response $response, View $view = null) {
         if (!$view || !$view instanceof HtmlView) {
             return false;
         } elseif ($this->isForced) {
