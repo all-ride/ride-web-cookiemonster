@@ -1,0 +1,14 @@
+{
+    "i18n.expose": {
+        "en": [
+            "title.cookiemonster",
+            "label.cookiemonster",
+            "button.cookiemonster"
+        ],
+        "nl": [
+            "title.cookiemonster",
+            "label.cookiemonster",
+            "button.cookiemonster"
+        ]
+    }
+}
