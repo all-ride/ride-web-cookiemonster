@@ -1,0 +1,21 @@
+{
+    "dependencies": [
+        {
+            "class": "ride\\web\\CookieMonsterApplicationListener",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "isForced",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "cookiemonster.force"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
