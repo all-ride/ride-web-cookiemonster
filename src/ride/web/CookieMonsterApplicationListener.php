@@ -3,9 +3,10 @@
 namespace ride\web;
 
 use ride\library\event\Event;
+use ride\library\http\Request;
+use ride\library\mvc\Response;
 use ride\library\mvc\view\HtmlView;
-
-use ride\web\WebApplication;
+use ride\library\mvc\view\View;
 
 /**
  * Listener to hook the cookiemonster into Ride
@@ -46,7 +47,12 @@ class CookieMonsterApplicationListener {
      */
     public function addCookieMonster(Event $event) {
         $web = $event->getArgument('web');
-        if ($this->shouldAddCookieMonster($web)) {
+
+        $request = $web->getRequest();
+        $response = $web->getResponse();
+        $view = $response->getView();
+
+        if ($this->shouldAddCookieMonster($request, $response, $view)) {
             $view->addJavascript($request->getBaseUrl() . '/' . self::SCRIPT_TRANSLATOR);
             $view->addJavascript($request->getBaseUrl() . '/' . self::SCRIPT_COOKIEMONSTER);
         }
@@ -54,20 +60,16 @@ class CookieMonsterApplicationListener {
 
     /**
      * Checks if the cookie monster should be added
-     * @param \ride\web\WebApplication $web
+     * @param \ride\library\http\Request $request
+     * @param \ride\library\mvc\Response $response
+     * @param \ride\library\mvc\view\View $view
      * @return boolean
      */
-    private function shouldAddCookieMonster(WebApplication $web) {
-        if ($this->isForced) {
-            return true;
-        }
-
-        $request = $web->getRequest();
-        $response = $web->getResponse();
-
-        $view = $response->getView();
+    private function shouldAddCookieMonster(Request $request, Response $response, View $view) {
         if (!$view || !$view instanceof HtmlView) {
             return false;
+        } elseif ($this->isForced) {
+            return true;
         }
 
         $cookies = $response->getCookies();
