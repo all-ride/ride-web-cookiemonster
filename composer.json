@@ -2,7 +2,7 @@
     "name": "ride/web-cookiemonster",
     "description": "Automatic notification of cookie usage in a Ride application",
     "license": "MIT",
-    "version": "0.2.4",
+    "version": "0.3.0",
     "authors": [
         {
             "name": "Joris Vandeweerd",
