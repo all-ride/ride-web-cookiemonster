@@ -18,6 +18,8 @@
       };
 
       var _renderCookieWrapper = function() {
+        var cookieTemplate = document.getElementById('cookiemonster');
+
         cookieWrapper = document.createElement('div');
         cookieWrapper.className = 'cookiemonster';
         cookieWrapper.innerHTML = '<div class="container">' +
@@ -27,6 +29,9 @@
           '<a href="#" class="cookiemonster__close js-cookie-close">&times;</a>' +
         '</div>';
 
+        if (cookieTemplate) {
+          cookieWrapper.innerHTML = cookieTemplate.innerHTML;
+        }
         document.body.appendChild(cookieWrapper);
       };
 
